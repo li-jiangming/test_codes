@@ -23,7 +23,7 @@ int setproctitle(const char *title)
     if (NULL == p) {
         perror("malloc error");
         return 1;
-	}
+    }
 
     for (i = 0; environ[i]; i++) {
         size = strlen(environ[i]) + 1;
