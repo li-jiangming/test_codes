@@ -16,7 +16,7 @@ int setproctitle(const char *title)
 
     size = 0;
     for (i = 0; environ[i]; i++) {
-    size += strlen(environ[i]) + 1;
+        size += strlen(environ[i]) + 1;
     }
 
     p = malloc(sizeof(char) * size);
@@ -30,7 +30,7 @@ int setproctitle(const char *title)
         memcpy(p, environ[i], size);
         environ[i] = p;
         p += size;
-	}
+    }
 
     strcpy(global_argv[0], "nginx: ");
     strcat(global_argv[0], title);
